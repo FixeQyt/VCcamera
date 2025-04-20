@@ -105,4 +105,8 @@ dependencies {
 
     implementation project(':opensdk')
     implementation 'virtual.camera.camera:camera:1.0.0'
+    def appCenterSdkVersion = '5.0.4'
+implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+
 }
