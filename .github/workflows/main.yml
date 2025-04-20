@@ -1,0 +1,23 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main  # triggers on push to main branch
+  workflow_dispatch:  # allows manual trigger from the GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Build APK
+        run: ./gradlew assembleDebug
